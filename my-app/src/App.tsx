@@ -6,35 +6,39 @@ import cordyceps3 from "./cordyceps3.jpg";
 import { ImageText } from "./ImageText";
 
 function App(): ReactElement {
-  const [CordycepImage, setImage] = useState(1);
+  const cordycepsData = [
+    { image: cordyceps1, text: "cordycep lord" },
+    { image: cordyceps2, text: "cordycep pleb" },
+    { image: cordyceps3, text: "cordycep deity" },
+    {
+      image: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/590.png",
+      text: "cordycep noob",
+    },
+    {
+      image:
+        "https://static.wikia.nocookie.net/pokemon/images/d/de/286Breloom.png",
+      text: "fake cordycep",
+    },
+    {
+      image:
+        "https://archives.bulbagarden.net/media/upload/thumb/7/70/0755Morelull.png/900px-0755Morelull.png",
+      text: "cordycep fairy",
+    },
+  ];
+
+  const [cordycepImage, setCordycepImage] = useState(0);
   function cordycepCycler() {
-    if (CordycepImage < 3) {
-      setImage(CordycepImage + 1);
+    if (cordycepImage < cordycepsData.length - 1) {
+      return setCordycepImage(cordycepImage + 1);
     }
-    if (CordycepImage === 3) {
-      setImage(1);
+    if (cordycepImage === cordycepsData.length - 1) {
+      return setCordycepImage(0);
     }
   }
-  if (CordycepImage === 1)
-    return (
-      <ImageText
-        image={cordyceps1}
-        text="cordycep lord"
-        onClickResult={cordycepCycler}
-      ></ImageText>
-    );
-  if (CordycepImage === 2)
-    return (
-      <ImageText
-        image={cordyceps2}
-        text="cordycep pleb"
-        onClickResult={cordycepCycler}
-      ></ImageText>
-    );
   return (
     <ImageText
-      image={cordyceps3}
-      text="cordycep deity"
+      image={cordycepsData[cordycepImage].image}
+      text={cordycepsData[cordycepImage].text}
       onClickResult={cordycepCycler}
     ></ImageText>
   );
