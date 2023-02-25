@@ -34,7 +34,7 @@ function App(): ReactElement {
   return (
     <ImageText
       image={cordyceps3}
-      text="cordycep deity"
+      text="cordycep deityjhghg"
       onClickResult={cordycepCycler}
     ></ImageText>
   );
