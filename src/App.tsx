@@ -5,8 +5,12 @@ import { About } from "./About";
 import { Contact } from "./Contact";
 import { Terms } from "./Terms";
 import { Catalog } from "./Catalog";
+import { useQuery } from "@apollo/client";
+import { GET_HOME } from "./gql/query";
 
 function App(): ReactElement {
+  const { loading, error, data } = useQuery(GET_HOME);
+  console.log(data);
   const displayComponent = [Home, Catalog, About, Contact, Terms];
   const [component, setComponent] = useState("home");
   return (
