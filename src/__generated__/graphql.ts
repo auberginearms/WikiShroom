@@ -29,9 +29,13 @@ export type PageText = {
 
 export type Query = {
   __typename?: 'Query';
+  about: PageText;
+  catalog: PageText;
+  contact: PageText;
   cordyceps: Array<Cordycep>;
   getCordycep?: Maybe<Cordycep>;
   home: PageText;
+  terms: PageText;
 };
 
 
@@ -44,5 +48,11 @@ export type GetHomeQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetHomeQuery = { __typename?: 'Query', home: { __typename?: 'PageText', pageDescription?: string | null, pageHeader?: string | null } };
 
+export type GetContactQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetContactQuery = { __typename?: 'Query', contact: { __typename?: 'PageText', pageDescription?: string | null, pageHeader?: string | null } };
+
 
 export const GetHomeDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getHome"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"home"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pageDescription"}},{"kind":"Field","name":{"kind":"Name","value":"pageHeader"}}]}}]}}]} as unknown as DocumentNode<GetHomeQuery, GetHomeQueryVariables>;
+export const GetContactDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getContact"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"contact"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pageDescription"}},{"kind":"Field","name":{"kind":"Name","value":"pageHeader"}}]}}]}}]} as unknown as DocumentNode<GetContactQuery, GetContactQueryVariables>;
