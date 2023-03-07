@@ -8,3 +8,12 @@ export const GET_HOME = gql(`
     }
   }
 `);
+
+export const GET_CONTACT = gql(`
+  query getContact {
+    contact {
+      pageDescription
+      pageHeader
+    }
+  }
+`);
