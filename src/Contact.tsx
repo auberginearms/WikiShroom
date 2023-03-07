@@ -15,7 +15,7 @@ export function Contact(): ReactElement {
         {data?.contact.pageHeader}
       </h1>
       <p style={{ display: "flex", justifyContent: "center" }}>
-        We use magical mushrooms to speak to each other over long distances
+      {data?.contact.pageDescription}
       </p>
     </div>
   );
