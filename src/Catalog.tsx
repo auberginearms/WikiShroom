@@ -1,7 +1,12 @@
 import { ReactElement, useState } from "react";
 import { ImageText } from "./ImageText";
+import { useQuery } from "@apollo/client";
+import { GET_CATALOG } from "./gql/query";
+
 
 export function Catalog(): ReactElement {
+    const { loading, error, data } = useQuery(GET_CATALOG);
+
   const shroomData: { image: string; text: string }[] = [
     {
       image:
@@ -56,7 +61,7 @@ export function Catalog(): ReactElement {
           Shroom 3
         </button>
       </div>
-      <h1 style={{ display: "flex", justifyContent: "center" }}>Shroomalog</h1>
+      <h1 style={{ display: "flex", justifyContent: "center" }}>{data?.catalog.pageHeader}</h1>
       <ImageText
         image={shroomData[shroom].image}
         text={shroomData[shroom].text}

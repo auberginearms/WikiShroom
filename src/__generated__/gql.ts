@@ -15,6 +15,9 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
 const documents = {
     "\n  query getHome {\n    home {\n      pageDescription\n      pageHeader\n    }\n  }\n": types.GetHomeDocument,
     "\n  query getContact {\n    contact {\n      pageDescription\n      pageHeader\n    }\n  }\n": types.GetContactDocument,
+    "\n  query getAbout {\n    about {\n      pageDescription\n      pageHeader\n    }\n  }\n": types.GetAboutDocument,
+    "\n  query getCatalog {\n    catalog {\n      pageDescription\n      pageHeader\n    }\n  }\n": types.GetCatalogDocument,
+    "\n  query getTerms {\n    terms {\n      pageDescription\n      pageHeader\n    }\n  }\n": types.GetTermsDocument,
 };
 
 /**
@@ -39,6 +42,18 @@ export function gql(source: "\n  query getHome {\n    home {\n      pageDescript
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "\n  query getContact {\n    contact {\n      pageDescription\n      pageHeader\n    }\n  }\n"): (typeof documents)["\n  query getContact {\n    contact {\n      pageDescription\n      pageHeader\n    }\n  }\n"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "\n  query getAbout {\n    about {\n      pageDescription\n      pageHeader\n    }\n  }\n"): (typeof documents)["\n  query getAbout {\n    about {\n      pageDescription\n      pageHeader\n    }\n  }\n"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "\n  query getCatalog {\n    catalog {\n      pageDescription\n      pageHeader\n    }\n  }\n"): (typeof documents)["\n  query getCatalog {\n    catalog {\n      pageDescription\n      pageHeader\n    }\n  }\n"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "\n  query getTerms {\n    terms {\n      pageDescription\n      pageHeader\n    }\n  }\n"): (typeof documents)["\n  query getTerms {\n    terms {\n      pageDescription\n      pageHeader\n    }\n  }\n"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};

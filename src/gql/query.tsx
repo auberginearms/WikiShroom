@@ -17,3 +17,29 @@ export const GET_CONTACT = gql(`
     }
   }
 `);
+export const GET_ABOUT = gql(`
+  query getAbout {
+    about {
+      pageDescription
+      pageHeader
+    }
+  }
+`);
+
+export const GET_CATALOG = gql(`
+  query getCatalog {
+    catalog {
+      pageDescription
+      pageHeader
+    }
+  }
+`);
+
+export const GET_TERMS = gql(`
+  query getTerms {
+    terms {
+      pageDescription
+      pageHeader
+    }
+  }
+`);

@@ -53,6 +53,24 @@ export type GetContactQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetContactQuery = { __typename?: 'Query', contact: { __typename?: 'PageText', pageDescription?: string | null, pageHeader?: string | null } };
 
+export type GetAboutQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAboutQuery = { __typename?: 'Query', about: { __typename?: 'PageText', pageDescription?: string | null, pageHeader?: string | null } };
+
+export type GetCatalogQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetCatalogQuery = { __typename?: 'Query', catalog: { __typename?: 'PageText', pageDescription?: string | null, pageHeader?: string | null } };
+
+export type GetTermsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetTermsQuery = { __typename?: 'Query', terms: { __typename?: 'PageText', pageDescription?: string | null, pageHeader?: string | null } };
+
 
 export const GetHomeDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getHome"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"home"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pageDescription"}},{"kind":"Field","name":{"kind":"Name","value":"pageHeader"}}]}}]}}]} as unknown as DocumentNode<GetHomeQuery, GetHomeQueryVariables>;
 export const GetContactDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getContact"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"contact"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pageDescription"}},{"kind":"Field","name":{"kind":"Name","value":"pageHeader"}}]}}]}}]} as unknown as DocumentNode<GetContactQuery, GetContactQueryVariables>;
+export const GetAboutDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getAbout"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"about"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pageDescription"}},{"kind":"Field","name":{"kind":"Name","value":"pageHeader"}}]}}]}}]} as unknown as DocumentNode<GetAboutQuery, GetAboutQueryVariables>;
+export const GetCatalogDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getCatalog"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"catalog"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pageDescription"}},{"kind":"Field","name":{"kind":"Name","value":"pageHeader"}}]}}]}}]} as unknown as DocumentNode<GetCatalogQuery, GetCatalogQueryVariables>;
+export const GetTermsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getTerms"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"terms"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pageDescription"}},{"kind":"Field","name":{"kind":"Name","value":"pageHeader"}}]}}]}}]} as unknown as DocumentNode<GetTermsQuery, GetTermsQueryVariables>;
