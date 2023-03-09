@@ -1,8 +1,9 @@
 import { ReactElement } from "react";
 
-export function ImageText(props: {
-  image: string;
-  text: string;
+export function SingleShroomDisplay(props: {
+  image: string | undefined | null;
+  shroomName: string | null | undefined;
+  shroomDescription: string | null | undefined;
 }): ReactElement {
   return (
     <div
@@ -14,10 +15,14 @@ export function ImageText(props: {
       }}
     >
       <div>
-        <h2>{props.text}</h2>
-        <p>Here is a {props.text}. It is cute</p>
+        <h2>{props.shroomName}</h2>
+        <p>{props.shroomDescription}</p>
       </div>
-      <img src={props.image} style={{ width: 100 }}></img>
+      {props.image ? (
+        <img src={props.image} style={{ width: 100 }}></img>
+      ) : (
+        "No image to display"
+      )}
     </div>
   );
 }

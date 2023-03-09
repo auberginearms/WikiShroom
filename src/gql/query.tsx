@@ -27,12 +27,17 @@ export const GET_ABOUT = gql(`
 `);
 
 export const GET_CATALOG = gql(`
-  query getCatalog {
-    catalog {
-      pageDescription
-      pageHeader
-    }
+query getCatalog {
+  cordyceps {
+    cordycepDescription
+    cordycepImage
+    cordycepName
   }
+  catalog {
+    pageDescription
+    pageHeader
+  }
+}
 `);
 
 export const GET_TERMS = gql(`
