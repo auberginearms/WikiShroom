@@ -3,9 +3,8 @@ import { ImageText } from "./ImageText";
 import { useQuery } from "@apollo/client";
 import { GET_CATALOG } from "./gql/query";
 
-
 export function Catalog(): ReactElement {
-    const { loading, error, data } = useQuery(GET_CATALOG);
+  const { loading, error, data } = useQuery(GET_CATALOG);
 
   const shroomData: { image: string; text: string }[] = [
     {
@@ -23,8 +22,26 @@ export function Catalog(): ReactElement {
         "https://t3.ftcdn.net/jpg/05/22/51/52/360_F_522515299_rKG2sXV20mUbyFGZcQqTm7fFURtbZANb.jpg",
       text: "Shroom 3",
     },
+    {
+      image:
+        "https://t3.ftcdn.net/jpg/05/22/51/52/360_F_522515299_rKG2sXV20mUbyFGZcQqTm7fFURtbZANb.jpg",
+      text: "Shroom 4",
+    },
   ];
-  const [shroom, setShroom] = useState(0);
+  const [displayShroomIndex, setDisplayShroomIndex] = useState(0);
+
+  const buttonElements = shroomData.map((shroom, index) => {
+    return (
+      <button
+        onClick={() => {
+          setDisplayShroomIndex(index);
+        }}
+      >
+        {shroom.text}
+      </button>
+    );
+  });
+
   return (
     <div
       style={{
@@ -39,32 +56,14 @@ export function Catalog(): ReactElement {
           justifyContent: "center",
         }}
       >
-        <button
-          onClick={() => {
-            setShroom(0);
-          }}
-        >
-          Shroom 1
-        </button>
-        <button
-          onClick={() => {
-            setShroom(1);
-          }}
-        >
-          Shroom 2
-        </button>
-        <button
-          onClick={() => {
-            setShroom(2);
-          }}
-        >
-          Shroom 3
-        </button>
+        {buttonElements}
       </div>
-      <h1 style={{ display: "flex", justifyContent: "center" }}>{data?.catalog.pageHeader}</h1>
+      <h1 style={{ display: "flex", justifyContent: "center" }}>
+        {data?.catalog.pageHeader}
+      </h1>
       <ImageText
-        image={shroomData[shroom].image}
-        text={shroomData[shroom].text}
+        image={shroomData[displayShroomIndex].image}
+        text={shroomData[displayShroomIndex].text}
       ></ImageText>
     </div>
   );
